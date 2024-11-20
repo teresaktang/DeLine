@@ -2,7 +2,7 @@ import puppeteer  from "puppeteer";
 
 
  const getWord = async () => {
-    const browset = await puppeteer.launch({
+    const browser = await puppeteer.launch({
         headless: false,
         defaultViewport: null,
     });
@@ -14,3 +14,5 @@ import puppeteer  from "puppeteer";
  };
 
  getWord();
+
+ 
