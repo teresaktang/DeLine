@@ -1,12 +1,10 @@
+const btn = document.getElementById("btn")
+const wordinput = document.getElementById("input")
+const word = deline
+
+//highlight define function
 class deline{
 
 }
 
-class frame{
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
-
-}
 
