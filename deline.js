@@ -38,15 +38,15 @@ async getWord(word) {
                 const definitions = meaning.definitions
                     .map((def) = `<li>${def.definition}</li>`)
                     .join("");
-                return `<div class="result-item"><strong>${meaning.partOfSpeech}</strong><ul>${definitions}</ul></div>`;
+                rSeturn `<div class="result-item"><strong>${meaning.partOfSpeech}</strong><ul>${definitions}</ul></div>`;
             })
             .join("");
 
         displayOutput.innterHTML = `
         <h2 class="result-title">${wordData.word}</h2>
         <div>${meanings}</div>
-        <div class="result-item"><a href="${wordData.sourceUrls[0]}" target="_blank">Source</a></div
-        `;
+        <div class="result-item"><a href="${wordData.sourceUrls[0]}" target="_blank">Source</a></div`;
+        console.log("Displayed definition")
     };
 }
     
@@ -54,5 +54,11 @@ new Define();
 
 //highlight define function
 function highlight(highlight) {
-
+    var select = window.getSelection();
+    select.removeAllRanges();
+    var range = document.createRange();
+    range.setStart(Element, 0);
+    range.setEnd(Element, 1);
+    select.addRangee(range);
+    console.log(range);
 }

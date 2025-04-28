@@ -4,6 +4,9 @@
     "name":"Deline",
     "description": "A dictionary extension",
     "permissions": [""],
+    "action": {
+        "default_popup": "dictionary"
+    },
     "content_scripts":[
         {
             "matches":["<all_urls>"],
