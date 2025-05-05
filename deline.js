@@ -36,16 +36,16 @@ async getWord(word) {
         const meanings = wordData.meanings
             .map((meaning) => {
                 const definitions = meaning.definitions
-                    .map((def) = `<li>${def.definition}</li>`)
+                    .map((def) => `<li>${def.definition}</li>`)
                     .join("");
-                rSeturn `<div class="result-item"><strong>${meaning.partOfSpeech}</strong><ul>${definitions}</ul></div>`;
+                return `<div class="result-item"><strong>${meaning.partOfSpeech}</strong><ul>${definitions}</ul></div>`;
             })
             .join("");
 
-        displayOutput.innterHTML = `
+        displayOutput.innerHTML = `
         <h2 class="result-title">${wordData.word}</h2>
         <div>${meanings}</div>
-        <div class="result-item"><a href="${wordData.sourceUrls[0]}" target="_blank">Source</a></div`;
+        <div class="result-item"><a href="${wordData.sourceUrls[0]}" target="_blank">Source</a></div>`;
         console.log("Displayed definition")
     };
 }
@@ -54,11 +54,17 @@ new Define();
 
 //highlight define function
 function highlight(highlight) {
-    var select = window.getSelection();
-    select.removeAllRanges();
-    var range = document.createRange();
-    range.setStart(Element, 0);
-    range.setEnd(Element, 1);
-    select.addRangee(range);
-    console.log(range);
+    var select = '';
+    if (window.getSelection) {
+        select = window.getSelection();
+    }
+    else if (document.getSelection) {
+        select = document.getSelection();
+    }
+    else if (document.selection) {
+        select = document.selection.createRAnge().text;
+    } else return;
+
 }
+
+//connect highlight function to define

@@ -18,7 +18,7 @@ body {
 }
 
 .input-container {
-    margin-top: 20rem;
+    margin-top: 10rem;
 }
 
 input[type=text] {
@@ -27,3 +27,9 @@ input[type=text] {
     box-sizing: border-box;
     font-size: 15px
 }
+
+.output {
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+  }
